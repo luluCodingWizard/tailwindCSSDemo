@@ -47,7 +47,7 @@ const App = () => {
   return (
     <div>
       <aside>
-        <h1>Top 5 Movies</h1>
+        <h1 className="underline font-medium">Top 5 Movies</h1>
         <input
           type="text"
           placeholder="Search movies"
