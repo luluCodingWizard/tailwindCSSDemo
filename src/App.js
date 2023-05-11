@@ -45,25 +45,28 @@ const App = () => {
   });
 
   return (
-    <div>
-      <aside>
-        <h1 className="underline font-medium">Top 5 Movies</h1>
-        <input
-          type="text"
-          placeholder="Search movies"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </aside>
-      <ul>
-        {filteredMovies.map((movie) => (
-          <li key={movie.id}>
-            <img src={movie.image} alt={movie.title} />
-            <h2>{movie.title}</h2>
-            <p>Year: {movie.year}</p>
-          </li>
-        ))}
-      </ul>
+    <div className=" bg-slate-950">
+      <div className="md:container  bg-gray-200 p-3">
+        <aside>
+          <h1>my header</h1>
+          <h1 className=" text-3xl font-bold text-red-900">Top 5 Movies</h1>
+          <input
+            type="text"
+            placeholder="Search movies"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+        </aside>
+        <ul>
+          {filteredMovies.map((movie) => (
+            <li key={movie.id}>
+              <img src={movie.image} alt={movie.title} />
+              <h2>{movie.title}</h2>
+              <p>Year: {movie.year}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
