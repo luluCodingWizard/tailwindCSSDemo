@@ -78,9 +78,11 @@ const App = () => {
 
   return (
     <div className=" bg-slate-950">
-      <div className="md:container  bg-gray-200 p-3 flex gap-2">
-        <aside className=" min-w-1/4">
-          <h1 className=" text-3xl font-bold text-red-900">Top 5 Movies</h1>
+      <div className="md:container  bg-transparent flex gap-2">
+        <aside className=" min-w-1/4 bg-slate-900 p-3 pt-16">
+          <h1 className=" text-3xl font-bold text-red-900 mb-3">
+            Top 5 Movies
+          </h1>
           <input
             type="text"
             placeholder="Search movies"
@@ -88,21 +90,23 @@ const App = () => {
             onChange={handleSearch}
           />
         </aside>
-        <ul className="grid grid-cols-3 gap-2">
-          {filteredMovies.map((movie) => (
-            <li key={movie.id}>
-              <img
-                src={movie.image}
-                alt={movie.title}
-                className=" h-40 mx-auto"
-              />
-              <h2>{movie.title}</h2>
-              <p>Year: {movie.year}</p>
-              <p>description: {movie.description}</p>
-              <p>ranking: {movie.ranking}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="pt-5 bg-gradient-to-r from-red-900 via-red-800 to-slate-900">
+          <ul className="grid grid-cols-3 gap-2 ">
+            {filteredMovies.map((movie) => (
+              <li key={movie.id} className=" bg-white/30">
+                <img
+                  src={movie.image}
+                  alt={movie.title}
+                  className=" h-40 mx-auto"
+                />
+                <h2>{movie.title}</h2>
+                <p>Year: {movie.year}</p>
+                <p>description: {movie.description}</p>
+                <p>ranking: {movie.ranking}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
