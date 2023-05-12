@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/App.js"],
   theme: {
@@ -12,7 +14,11 @@ module.exports = {
       "3/4": "75%",
       full: "100%",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [],
 };
