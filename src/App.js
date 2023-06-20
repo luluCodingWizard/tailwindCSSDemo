@@ -77,7 +77,7 @@ const App = () => {
   });
 
   return (
-    <div className=" bg-slate-950">
+    <div className="dark:bg-black bg-white">
       <div className="md:container  bg-transparent flex gap-2">
         <aside className=" min-w-1/4 bg-slate-900 p-3 pt-16">
           <h1 className=" text-3xl font-bold text-red-900 mb-3">
@@ -90,19 +90,39 @@ const App = () => {
             onChange={handleSearch}
           />
         </aside>
-        <div className="pt-5 bg-gradient-to-r from-red-900 via-red-800 to-slate-900">
+        <div className="pt-5 px-2 bg-gradient-to-r from-red-900 via-red-800 to-slate-900">
           <ul className="grid grid-cols-3 gap-2 ">
             {filteredMovies.map((movie) => (
-              <li key={movie.id} className=" bg-white/30">
+              <li
+                key={movie.id}
+                className=" bg-white/30 hover:bg-white/40 rounded-lg p-1"
+              >
                 <img
                   src={movie.image}
                   alt={movie.title}
                   className=" h-40 mx-auto"
                 />
-                <h2>{movie.title}</h2>
-                <p>Year: {movie.year}</p>
-                <p>description: {movie.description}</p>
-                <p>ranking: {movie.ranking}</p>
+                <h2 className="text-lg text-center mt-1 mb-4 text-white">
+                  {movie.title}
+                </h2>
+                <p>
+                  <span className=" font-bold w-20 mr-1 inline-block">
+                    Year:
+                  </span>
+                  {movie.year}
+                </p>
+                <p>
+                  <span className=" font-bold w-20 mr-1 inline-block">
+                    description:
+                  </span>{" "}
+                  {movie.description}
+                </p>
+                <p>
+                  <span className="font-bold w-20 mr-1 inline-block">
+                    ranking:
+                  </span>{" "}
+                  {movie.ranking}
+                </p>
               </li>
             ))}
           </ul>
