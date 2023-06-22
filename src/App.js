@@ -77,8 +77,8 @@ const App = () => {
   });
 
   return (
-    <div className="dark:bg-black bg-white">
-      <div className="md:container  bg-transparent flex gap-2">
+    <div className="bg-slate-950">
+      <div className="md:container  bg-transparent flex flex-col md:flex-row gap-2">
         <aside className=" min-w-1/4 bg-slate-900 p-3 pt-16">
           <h1 className=" text-3xl font-bold text-red-900 mb-3">
             Top 5 Movies
@@ -91,7 +91,7 @@ const App = () => {
           />
         </aside>
         <div className="pt-5 px-2 bg-gradient-to-r from-red-900 via-red-800 to-slate-900">
-          <ul className="grid grid-cols-3 gap-2 ">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ">
             {filteredMovies.map((movie) => (
               <li
                 key={movie.id}
